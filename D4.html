@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // Method 1 : add new li element
+     
+    function addnewlielement(langname) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langname}`
+        document.querySelector(".language").appendChild(li)
+    }
+    addnewlielement("Python")
+    addnewlielement("C")
+
+    // Method 2 : add new li element
+    
+    function addnewlanguage(langname) 
+    {
+        const li = documnet.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector("language").appendChild(li)
+    }
+    addnewlielement("JAVA   ")
+
+    // M 1 : How to edit element
+
+    const secondelement  = document.querySelector("li:nth-child(2)")
+    // secondelement.innerHTML = "PHP  "  // We can use this too.
+    const newli = document.createElement("li")
+    newli.textContent = 'PHP'
+    secondelement.replaceWith(newli)
+
+    // M 2 : How to edit element
+    const firstelement = document.querySelector("li:first-child")
+    firstelement.outerHTML = '<li> Typescript </li>'
+
+    // How remove element
+    const lastli = document.querySelector("li:last-child")
+    lastli.remove()
+</script>
+</html>
